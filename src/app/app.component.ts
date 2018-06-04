@@ -8,13 +8,14 @@ import * as firebase from 'firebase';
 })
 export class AppComponent {
   constructor() {
-    const config = {
-      apiKey: 'AIzaSyD02q0SuYUXMA-SawI3QX4tBwGZlJHS0oY',
-      authDomain: 'ocblog-1871f.firebaseapp.com',
-      databaseURL: 'https://ocblog-1871f.firebaseio.com',
-      projectId: 'ocblog-1871f',
-      storageBucket: 'ocblog-1871f.appspot.com',
-      messagingSenderId: '573262894393'
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCryyOnpaciyNQxd94FRE7PsfLdOlT27f8",
+      authDomain: "open-mok.firebaseapp.com",
+      databaseURL: "https://open-mok.firebaseio.com",
+      projectId: "open-mok",
+      storageBucket: "open-mok.appspot.com",
+      messagingSenderId: "405325271236"
     };
     firebase.initializeApp(config);
   }

@@ -17,15 +17,11 @@ export class PostListItemComponent implements OnInit {
 
   onLike(): boolean {
     this.postsService.onLike(this.index);
-    // this.postsService.savePosts();  ces deux instructions ont été rajoutées dans la méthode dans le service
-    // this.postsService.emitPosts();  le emitPost ne sert à rien puisque je fais appel à la méthode du service qui le fait déja
     return false;
   }
 
   onDislike(): boolean {
     this.postsService.onDislike(this.index);
-    // this.postsService.savePosts();
-    // this.postsService.emitPosts();
     return false;
 
   }
