@@ -3,6 +3,7 @@ import {Subject} from 'rxjs/Subject';
 import {Post} from '../models/post.model';
 import * as firebase from 'firebase';
 import DataSnapshot = firebase.database.DataSnapshot;
+import {HttpClient} from '@angular/common/http';
 
 @Injectable()
 export class PostsService {
@@ -13,10 +14,27 @@ export class PostsService {
     this.postsSubject.next(this.posts);
   }
 
-  constructor() {}
+  constructor(private httpClient: HttpClient) {}
 
+  /*
   savePosts() {
     firebase.database().ref('/posts').set(this.posts);
+  }
+  */
+
+  // projet OC
+  savePosts() {
+    this.httpClient
+    // possibilité d'utiliser .post au lieu de .put
+      .put('https://http:localhost:8080/public-api/persons/create', this.posts)
+      .subscribe(
+        () => {
+          console.log('Enregistrement terminé !');
+        },
+        (error) => {
+          console.log('Erreur ! : ' + error);
+        }
+      );
   }
 
   getPosts() {
@@ -34,6 +52,15 @@ export class PostsService {
     this.emitPosts();
   }
 
+  /*
+  // projet incident
+  add(incident: Incident): Observable<any>{
+
+    let headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
+    return this.http.post(this.baseurl, incident,  {headers});
+  }
+*/
   removePost(post: Post) {
     const postIndexToRemove = this.posts.findIndex(
       (postEl) => {

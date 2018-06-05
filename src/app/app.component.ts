@@ -8,6 +8,7 @@ import * as firebase from 'firebase';
 })
 export class AppComponent {
   constructor() {
+    /*
     const config = {
       apiKey: 'AIzaSyD02q0SuYUXMA-SawI3QX4tBwGZlJHS0oY',
       authDomain: 'ocblog-1871f.firebaseapp.com',
@@ -17,5 +18,6 @@ export class AppComponent {
       messagingSenderId: '573262894393'
     };
     firebase.initializeApp(config);
+    */
   }
 }
