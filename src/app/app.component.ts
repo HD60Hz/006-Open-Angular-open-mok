@@ -8,6 +8,7 @@ import * as firebase from 'firebase';
 })
 export class AppComponent {
   constructor() {
+   /*
     // Initialize Firebase
     var config = {
       apiKey: "AIzaSyCryyOnpaciyNQxd94FRE7PsfLdOlT27f8",
@@ -18,5 +19,6 @@ export class AppComponent {
       messagingSenderId: "405325271236"
     };
     firebase.initializeApp(config);
+    */
   }
 }
